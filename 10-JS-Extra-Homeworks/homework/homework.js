@@ -9,6 +9,7 @@ function deObjetoAmatriz(objeto){
       B: 2,
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
+      // clave valor
   //Escribe tu código aquí
 
   let array = []
@@ -31,7 +32,7 @@ function numberOfCharacters(string) {
 
   let obj = {}
   for(let i = 0; i < string.length; i++) {
-    if(obj.hasOwnProperty(string[i])) {
+    if(obj[string[i]]) {
       obj[string[i]]++
     }
     else obj[string[i]] = 1
