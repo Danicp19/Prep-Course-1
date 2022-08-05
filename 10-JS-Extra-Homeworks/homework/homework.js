@@ -17,9 +17,6 @@ function deObjetoAmatriz(objeto) {
     array.push([clave, objeto[clave]])
   }
   return array;
-
-
-
 }
 
 
@@ -73,10 +70,16 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
-  let phrase = str.split(' ').map(function (elm) {
-    return elm.split('').reverse().join('');
-  }).join(' ');
-  return phrase;
+
+  //            [  "the" , "Henry","",]
+  let frase = str.split(" ").map(function (palabra) {
+    return palabra.split("").reverse().join("")
+    //  ["t"   "h"   "e"]   "eht"
+  }).join(" ")
+
+  return frase
+
+
 }
 
 
@@ -85,15 +88,15 @@ function capicua(numero) {
   //La misma debe retornar: "Es capicua" si el número se número que se lee igual de 
   //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
   //Escribe tu código aquí
-  var numToString = numero.toString();
-  var reverseNum = ''
-  reverseNum = numToString.split('').reverse().join('');
-  if (numToString === reverseNum)
-    return 'Es capicua'
-  else {
-    return 'No es capicua'
+
+  var string = numero.toString()
+  var stringInvertida = string.split("").reverse().join("")
+
+  if (string === stringInvertida) {
+    return "Es capicua"
+  } else {
+    return "No es capicua"
   }
-  //escribir string mejor
 }
 
 
@@ -101,13 +104,17 @@ function deleteAbc(cadena) {
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada 
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
-  var modString = ''
+
+  var filtro = ""
   for (let i = 0; i < cadena.length; i++) {
-    if (cadena[i] !== 'a' && cadena[i] !== 'b' && cadena[i] !== 'c') 
-    //filtro
-      modString = modString + cadena[i]
+    if (cadena[i] !== "a" && cadena[i] !== "b" && cadena[i] !== "c"){
+      filtro = filtro + cadena[i]
+    }
+
+      
+
   }
-  return modString;
+  return filtro
 }
 
 
@@ -115,10 +122,7 @@ function sortArray(arr) {
   //La función recibe una matriz de strings. Ordena la matriz en orden creciente de longitudes de cadena
   //Ej: Recibe ---> ["You", "are", "beautiful", "looking"] || Devuelve ---> [“You", "are", "looking", "beautiful"]
   //Escribe tu código aquí
-  let increse = arr.sort(function (a, b) {
-    return a.length - b.length
-  })
-  return increse;
+
 }
 
 
@@ -129,14 +133,7 @@ function buscoInterseccion(arreglo1, arreglo2) {
   //Aclaración: los arreglos no necesariamente tienen la misma longitud
   //Escribe tu código aquí  
 
-  let union = []
-  for (let i = 0; i < arreglo1.length; i++) {
-    for (let j = 0; j < arreglo2.length; j++) {
-      if (arreglo1[i] === arreglo2[j])
-        union.push(arreglo1[i])
-    }
-  }
-  return union;
+
 }
 
 
